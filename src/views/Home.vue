@@ -1,29 +1,49 @@
 <script setup>
-import ButtonRepo from '@/components/ButtonRepo.vue'
+import { provide, ref } from 'vue';
+import Marterial from '@/components/Materials.vue';
+import Editor from '@/components/Editor.vue';
+import dsls from '@/materials/index';
+
+const editor = ref(null);
+const renderComponents = ref([]);
+provide('renderComponents', renderComponents);
+const deepClone = (obj) => JSON.parse(JSON.stringify(obj));
+const handleDrop = (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  const index = e.dataTransfer.getData('index');
+
+  if (index !== undefined && index !== null) {
+    const component = deepClone(dsls[index]);
+    console.log('component', component);
+    const rect = editor.value.getBoundingClientRect();
+    component.style.top = e.clientY - rect.y;
+    component.style.left = e.clientX - rect.x;
+    component.id = Math.random().toString(16).slice(5);
+    renderComponents.value = [...renderComponents.value, component];
+    console.log('pushing the component into renderComponents store', component);
+  }
+};
+
+const handleDragOver = (e) => {
+  e.preventDefault();
+  e.dataTransfer.dropEffect = 'copy';
+};
 </script>
 
 <template>
-  <div class="bg-gray-50">
-    <div
-      class="max-w-screen-xl px-4 py-12 mx-auto sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between"
-    >
-      <h2
-        class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10"
-      >
-        Ready to dive in?
-        <br />
-        <span class="text-indigo-600">Vite + Vue 3 + Tailwind CSS</span>
-      </h2>
-      <div class="flex mt-8 lg:flex-shrink-0 lg:mt-0">
-        <div class="inline-flex rounded-md shadow">
-          <router-link
-            to="/about"
-            class="inline-flex items-center justify-center px-5 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 focus:outline-none"
-            >Next Page</router-link
-          >
+  <el-container class="flex-col h-screen">
+    <el-header class="border-b border-b-gray-300" height="64px">Tool bar</el-header>
+    <el-container class="flex-1">
+      <el-aside width="200px">
+        <Marterial></Marterial>
+      </el-aside>
+      <el-main class="bg-gray-100">
+        <div class="w-full h-full relative center" ref="editor" @drop="handleDrop" @dragover="handleDragOver">
+          <Editor></Editor>
         </div>
-        <ButtonRepo />
-      </div>
-    </div>
-  </div>
+      </el-main>
+      <el-aside width="250px">Right</el-aside>
+    </el-container>
+  </el-container>
 </template>

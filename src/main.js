@@ -1,15 +1,23 @@
-import { createApp } from 'vue'
-import './tailwind.css'
-import App from './App.vue'
-import { routes } from './routes.js'
-import { createRouter, createWebHistory } from 'vue-router'
+import { createApp } from 'vue';
+import { createRouter, createWebHistory } from 'vue-router';
+import ElementPlus from 'element-plus';
 
-const app = createApp(App)
+import App from './App.vue';
+import { routes } from './routes.js';
+
+import VButton from '@/materials/v-button.vue';
+
+import './tailwind.css';
+import 'element-plus/dist/index.css';
+
+const app = createApp(App);
 
 const router = createRouter({
   history: createWebHistory(),
-  routes,
-})
+  routes
+});
 
-app.use(router)
-app.mount('#app')
+app.component('v-button', VButton);
+app.use(router);
+app.use(ElementPlus);
+app.mount('#app');
