@@ -503,10 +503,10 @@ electron-to-chromium@^1.3.811:
   resolved "https://registry.nlark.com/electron-to-chromium/download/electron-to-chromium-1.3.822.tgz#7036edc7f669b0aa79e9801dc5f56866c6ddc0b2"
   integrity sha1-cDbtx/ZpsKp56YAdxfVoZsbdwLI=
 
-element-plus@^1.1.0-beta.7:
-  version "1.1.0-beta.7"
-  resolved "https://registry.nlark.com/element-plus/download/element-plus-1.1.0-beta.7.tgz?cache=0&sync_timestamp=1629987856320&other_urls=https%3A%2F%2Fregistry.nlark.com%2Felement-plus%2Fdownload%2Felement-plus-1.1.0-beta.7.tgz#9a877bc2d72f5c3ab6f78a3c45fa6f458ea87fb0"
-  integrity sha1-mod7wtcvXDq294o8RfpvRY6of7A=
+element-plus@^1.1.0-beta.8:
+  version "1.1.0-beta.8"
+  resolved "https://registry.yarnpkg.com/element-plus/-/element-plus-1.1.0-beta.8.tgz#e40a2b4767ccbee1ff9aa6d4ed284863ad246e1c"
+  integrity sha512-L0z4UoaazLgvimU+Eb8KHwBdX6ND2sSOO/ja70FMJl7Y3T+PxP95OZAkpr1sNiBzMaVVdMef4lQLBwPqTO6PKw==
   dependencies:
     "@element-plus/icons" "^0.0.11"
     "@popperjs/core" "^2.4.4"
