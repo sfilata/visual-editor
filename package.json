@@ -24,6 +24,6 @@
     "autoprefixer": "^10.3.3",
     "sass": "^1.38.2",
     "tailwindcss": "^2.2.8",
-    "vite": "^2.5.2"
+    "vite": "^2.5.7"
   }
 }
