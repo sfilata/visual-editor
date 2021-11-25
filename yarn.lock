@@ -1200,10 +1200,10 @@ run-parallel@^1.1.9:
   dependencies:
     queue-microtask "^1.2.2"
 
-sass@^1.38.2:
-  version "1.38.2"
-  resolved "https://registry.nlark.com/sass/download/sass-1.38.2.tgz?cache=0&sync_timestamp=1630138330754&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fsass%2Fdownload%2Fsass-1.38.2.tgz#970045d9966180002a8c8f3820fc114cddb42822"
-  integrity sha1-lwBF2ZZhgAAqjI84IPwRTN20KCI=
+sass@^1.43.5:
+  version "1.43.5"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.43.5.tgz#25a9d91dd098793ef7229d7b04dd3daae2fc4a65"
+  integrity sha512-WuNm+eAryMgQluL7Mbq9M4EruyGGMyal7Lu58FfnRMVWxgUzIvI7aSn60iNt3kn5yZBMR7G84fAGDcwqOF5JOg==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
 
